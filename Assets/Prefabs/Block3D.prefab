@@ -125,9 +125,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7c9b11710afa827448d0a9b22a0c53f4, type: 3}
   - {fileID: 21300000, guid: 4d22ecf3801fd684bb9270e7f52f9615, type: 3}
   - {fileID: 21300000, guid: 7c25e38e8618dbd47a0a85aca9f8cb58, type: 3}
-  blockMtrs:
-  - {fileID: 2100000, guid: 865e367aead9d7947a3bdcb4ba348d06, type: 2}
-  - {fileID: 2100000, guid: 9f70905f1836bfb49829e087a8548f0d, type: 2}
+  sweepedSprite: {fileID: 21300000, guid: 4bace728859218e4fbc7c24ceeb1dff9, type: 3}
   x: 0
   y: 0
   sweeped: 0
@@ -136,4 +134,5 @@ MonoBehaviour:
   num: 0
   flagModel: {fileID: 0}
   hover: {fileID: 0}
+  spriteBlockSweeped: {fileID: 0}
   stageManager: {fileID: 0}

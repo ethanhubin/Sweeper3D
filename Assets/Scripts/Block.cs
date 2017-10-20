@@ -12,9 +12,9 @@ public class Block : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     public GameObject prefabHover;
 
     public List<Material> terrains;
-
     public List<Sprite> numList;
-    public List<Material> blockMtrs;
+    public Sprite sweepedSprite;
+
     public int x;
     public int y;
     public bool sweeped = false;
@@ -24,6 +24,8 @@ public class Block : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 
     public GameObject flagModel;
     public GameObject hover;
+    public GameObject spriteBlockSweeped;
+
     public StageManager stageManager;
 
     // Use this for initialization
@@ -51,8 +53,15 @@ public class Block : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
         float ty = sweeped ? -0.1f : 0;
         transform.DOLocalMoveY(ty, 0.2f);
 
-        MeshRenderer r = GetComponent<MeshRenderer>();
-        r.material = sweeped ? blockMtrs[1] : blockMtrs[0];
+        if (sweeped) {
+            spriteBlockSweeped = Instantiate(prefabHover, transform, false);
+            spriteBlockSweeped.GetComponent<SpriteRenderer>().sprite = sweepedSprite;
+        }
+        else
+        {
+            GameObject.Destroy(spriteBlockSweeped);
+            spriteBlockSweeped = null;
+        }
     }
     public void setFlaged(bool bFlaged)
     {
